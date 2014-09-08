@@ -39,3 +39,7 @@
 :nnoremap <silent> ]B :blast<CR>
 :cnoremap <C-p> <Up>
 :cnoremap <C-n> <Down>
+:map <C-h> <C-w>h
+:map <C-j> <C-w>j
+:map <C-k> <C-w>k
+:map <C-l> <C-w>l
