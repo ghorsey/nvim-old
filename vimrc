@@ -16,6 +16,7 @@
 :set showmatch " show matching paren
 :set shiftwidth=4
 :set shiftround " use multiple shipwidth when indenting with '<' and '>'
+:set expandtab
 :set softtabstop=4
 :set hlsearch " hilight matches
 :set incsearch " show matches as you type
