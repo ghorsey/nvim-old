@@ -1,5 +1,7 @@
 :set nocompatible 
 :filetype plugin on
+:runtime macros/matchit.vim
+
 :execute pathogen#infect()
 :execute pathogen#helptags()
 :set number
