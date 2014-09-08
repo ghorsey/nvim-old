@@ -7,3 +7,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
+[submodule "bundle/vim-colors-bluedrake"]
+	path = bundle/vim-colors-bluedrake
+	url = git://github.com/michaelmalick/vim-colors-bluedrake.git

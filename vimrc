@@ -31,10 +31,13 @@
 :set nobackup
 :set noswapfile
 :set mouse=a
+:set background=dark
 :fixdel
+:syntax enable
 :let &t_AB="\e[48;5;%dm"
 :let &t_AF="\e[38;5;%dm"
-:colorscheme Monokai-Refined
+:let g:bluedrake_256=1
+:colorscheme bluedrake
 :nnoremap <silent> [b :bprevious<CR>
 :nnoremap <silent> ]b :bnext<CR>
 :nnoremap <silent> [B :bfirst<CR>
