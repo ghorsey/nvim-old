@@ -10,3 +10,6 @@
 [submodule "bundle/vim-colors-bluedrake"]
 	path = bundle/vim-colors-bluedrake
 	url = git://github.com/michaelmalick/vim-colors-bluedrake.git
+[submodule "bundle\\AutoFenc"]
+	path = bundle\\AutoFenc
+	url = git@github.com:s3rvac/AutoFenc.git
