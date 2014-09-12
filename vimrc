@@ -49,6 +49,7 @@
 :map <C-k> <C-w>k
 :map <C-l> <C-w>l
 
+:set path+=.\**,$PWD\**
 " make %% a shortcurt for printing out the path of the file loaded in the
 " current buffer
 :cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%' 
