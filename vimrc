@@ -49,9 +49,6 @@
 :map <C-k> <C-w>k
 :map <C-l> <C-w>l
 
-" set the path to the directory used to open VIM and all sub directories
-:set path+=$PWD/**
-
 " make %% a shortcurt for printing out the path of the file loaded in the
 " current buffer
 :cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%' 
