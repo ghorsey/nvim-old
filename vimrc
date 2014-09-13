@@ -49,7 +49,23 @@
 :map <C-k> <C-w>k
 :map <C-l> <C-w>l
 
+if has("multi_byte")
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    "setglobal bomb
+    set fileencodings=ucs-bom,utf-8,latin1
+endif
+
 :set path+=.\**,$PWD\**
 " make %% a shortcurt for printing out the path of the file loaded in the
 " current buffer
 :cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%' 
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
