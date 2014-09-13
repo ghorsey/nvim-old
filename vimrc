@@ -68,4 +68,4 @@ endif
 nmap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:»\ ,eol:¬, nbsp:*
+set listchars=tab:»\ ,eol:¬
