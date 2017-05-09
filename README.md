@@ -3,5 +3,5 @@
 
 My .vim folder setup.
 
-After clone run in the `.vim` folder run the following git command:
+After cloning the repository, `cd .vim` folder and run the following git command:
 `git submodule update --init --recursive`
