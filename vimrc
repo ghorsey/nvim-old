@@ -32,7 +32,7 @@
 :set noswapfile
 :set mouse=a
 :set background=dark
-:set clipboard=unamed
+:set clipboard=unnamed
 :fixdel
 :syntax enable
 :let &t_AB="\e[48;5;%dm"
