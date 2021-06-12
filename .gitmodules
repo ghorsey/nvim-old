@@ -1,3 +1,6 @@
 [submodule "pack/bundle/start/vim-unimpaired"]
 	path = pack/bundle/start/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
+[submodule "pack/bundle/opt/vim-scriptease"]
+	path = pack/bundle/opt/vim-scriptease
+	url = git@github.com:tpope/vim-scriptease.git
