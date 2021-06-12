@@ -8,4 +8,4 @@ After cloning the repository, `cd .vim` folder and run the following git command
 
 ## Dependencies
 
-* (FZF)[https://github.com/junegunn/fzf]
+* [FZF](https://github.com/junegunn/fzf)
