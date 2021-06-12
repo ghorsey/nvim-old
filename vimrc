@@ -13,3 +13,4 @@ nnoremap <C-p> :<C-u>FZF<CR>
 " Commands
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
+
