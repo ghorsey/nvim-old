@@ -9,8 +9,10 @@ After cloning the repository, `cd .vim` folder and run the following git command
 1. Open Windows Terminal Settings
 1. Comment out the following lines:
 
-    // { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-    // { "command": "paste", "keys": "ctrl+v" },
+```
+// { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+// { "command": "paste", "keys": "ctrl+v" },
+```
 
 ## Dependencies
 
