@@ -16,6 +16,13 @@ call minpac#add('k-takata/minpac', { 'type': 'opt' })
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('editorconfig/editorconfig-vim')
+" Blog extensions
+call minpac#add('neoclide/coc.nvim')
+call minpac#add('jiangmiao/auto-pairs')
+call minpac#add('machakann/vim-sandwich')
+call minpac#add('preservim/nerdcommenter')
+call minpac#add('tpope/vim-fugitive') " git extension
+call minpac#add('airblade/vim-gitgutter') " git extension
 
 "" NerdTree
 call minpac#add('preservim/nerdtree')
@@ -114,6 +121,7 @@ set smartcase " ignore case if search is all lower case
 set ignorecase " ignore case when searching
 set t_Co=256 " Allows for color schemes
 set title
+set number
 
 "" Undo file
 set undofile
