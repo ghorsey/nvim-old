@@ -20,6 +20,11 @@ After cloning the repository, `cd .vim` folder and run the following git command
 * [RipGrep](https://github.com/BurntSushi/ripgrep#installation): Used to grep file for FZF.  Create the following
   environment variable `export FZF_DEFAULT_COMMAND=rg --files`
 
+### Python3 Provider
+`pip3 install --user --upgrade neovim`
+
+### Neovim-Remote
+`pip3 install --user --upgrade neovim-remote`
 
 ## Per-Project Setup
 
