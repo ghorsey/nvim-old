@@ -16,13 +16,19 @@ call minpac#add('k-takata/minpac', { 'type': 'opt' })
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('editorconfig/editorconfig-vim')
-" Blog extensions
+"" OmniSharp
+call minpac#add('OmniSharp/omnisharp-vim')
+filetype indent plugin on
+syntax enable
+
+"" Blog extensions
 call minpac#add('neoclide/coc.nvim')
 call minpac#add('jiangmiao/auto-pairs')
 call minpac#add('machakann/vim-sandwich')
 call minpac#add('preservim/nerdcommenter')
 call minpac#add('tpope/vim-fugitive') " git extension
 call minpac#add('airblade/vim-gitgutter') " git extension
+
 
 "" NerdTree
 call minpac#add('preservim/nerdtree')
@@ -57,6 +63,7 @@ xmap gs <plug>(GrepperOperator)
 "" Linting Plugins
 call minpac#add('w0rp/ale')
 let g:ale_linters = {
+\  'cs': ['OmniSharp'],
 \  'javascript': ['eslint'],
 \}
 
