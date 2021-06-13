@@ -60,16 +60,29 @@ nmap <silent> ]w <Plug>(ale_next)
 nmap <silent> ]W <Plug>(ale_last)
 
 "" Mapping window movements
-nnoremap <M-h> <c-w>h
-nnoremap <M-j> <c-w>j
-nnoremap <M-k> <c-w>k
-nnoremap <M-l> <c-w>l
+function! WinMove(key)
+  let t:curwin = winnr()
+  exec "wincmd ".a:key
+  if (t:curwin == winnr())
+    if (match(a:key, '[jk]'))
+      wincmd v
+    else
+      wincmd s
+    endif
+    exec "wincmd ".a:key
+  endif
+endfunction
+
+nnoremap <M-h> :call WinMove('h')<CR>
+nnoremap <M-j> :call WinMove('j')<CR>
+nnoremap <M-k> :call WinMove('k')<CR>
+nnoremap <M-l> :call WinMove('l')<CR>
 
 if has('nvim')
-  tnoremap <M-h> <c-\><c-n><c-w>h
-  tnoremap <M-j> <c-\><c-n><c-w>j
-  tnoremap <M-k> <c-\><c-n><c-w>k
-  tnoremap <M-l> <c-\><c-n><c-w>l
+  tnoremap <M-h> <c-\><c-n> :call WinMove('h')<CR>
+  tnoremap <M-j> <c-\><c-n> :call WinMove('j')<CR>
+  tnoremap <M-k> <c-\><c-n> :call WinMove('k')<CR>
+  tnoremap <M-l> <c-\><c-n> :call WinMove('l')<CR>
 endif
 
 "" Compiler Plugins
