@@ -115,7 +115,14 @@ let g:airline_theme='molokai'
 
 "" Vim Test
 call minpac#add('vim-test/vim-test')
-let test#javascript#jasmine#executable = 'npx jasmine'
+if has('nvim')
+  let test#strategy='neovim'
+else
+  let test#strategy='vimterminal'
+endif
+
+"let test#javascript#runner = 'jasmine'
+"let test#javascript#jasmine#executable = 'npx jasmine'
 
 "" Grepper
 call minpac#add('mhinz/vim-grepper')
