@@ -127,18 +127,15 @@ let g:airline_theme='molokai'
 
 "" Vim Test
 call minpac#add('vim-test/vim-test')
-"let g:test#runner_commands = ['Jasmine']
-"let g:test#enabled_runners = ['javascript#jasmine']
-"let g:test#javascript#jasmine#file_pattern = '\v^spec/.spec\.(js|jsx|coffee)$'
 let g:test#javascript#jasmine#file_pattern = '\v^spec[\\/].*spec\.(js|jsx|coffee)$'
+let test#javascript#jasmine#executable = 'npx jasmine'
+
 if has('nvim')
   let test#strategy='neovim'
 else
   let test#strategy='vimterminal'
 endif
 
-"let test#javascript#runner = 'jasmine'
-let test#javascript#jasmine#executable = 'npx jasmine'
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 nmap <silent> t<C-n> :TestNearest<CR>
