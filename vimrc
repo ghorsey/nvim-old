@@ -127,7 +127,10 @@ let g:airline_theme='molokai'
 
 "" Vim Test
 call minpac#add('vim-test/vim-test')
-let g:test#runner_commands = ['Jasmine']
+"let g:test#runner_commands = ['Jasmine']
+"let g:test#enabled_runners = ['javascript#jasmine']
+"let g:test#javascript#jasmine#file_pattern = '\v^spec/.spec\.(js|jsx|coffee)$'
+let g:test#javascript#jasmine#file_pattern = '\v^spec[\\/].*spec\.(js|jsx|coffee)$'
 if has('nvim')
   let test#strategy='neovim'
 else
@@ -136,6 +139,13 @@ endif
 
 "let test#javascript#runner = 'jasmine'
 let test#javascript#jasmine#executable = 'npx jasmine'
+
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
 
 "" Grepper
 call minpac#add('mhinz/vim-grepper')
