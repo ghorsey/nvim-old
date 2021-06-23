@@ -16,6 +16,7 @@ call minpac#add('k-takata/minpac', { 'type': 'opt' })
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('editorconfig/editorconfig-vim')
+call minpac#add('Yggdroot/indentLine')
 
 "" OmniSharp
 call minpac#add('OmniSharp/omnisharp-vim')
@@ -127,8 +128,8 @@ let g:airline_theme='molokai'
 
 "" Vim Test
 call minpac#add('vim-test/vim-test')
-let g:test#javascript#jasmine#file_pattern = '\v^spec[\\/].*spec\.(js|jsx|coffee)$'
-let test#javascript#jasmine#executable = 'npx jasmine'
+"let g:test#javascript#jasmine#file_pattern = '\v^spec[\\/].*spec\.(js|jsx|coffee)$'
+"let test#javascript#jasmine#executable = 'npx jasmine'
 
 if has('nvim')
   let test#strategy='neovim'
@@ -218,6 +219,7 @@ if has('nvim')
 endif
 
 " Options
+set mouse=a " Enable Mouse Support
 set clipboard=unnamed " Copy to clipboard
 set smartcase " ignore case if search is all lower case
 set ignorecase " ignore case when searching
