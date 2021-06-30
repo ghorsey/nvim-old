@@ -219,6 +219,7 @@ if has('nvim')
 endif
 
 " Options
+set noswapfile
 set mouse=a " Enable Mouse Support
 set clipboard=unnamed " Copy to clipboard
 set smartcase " ignore case if search is all lower case
