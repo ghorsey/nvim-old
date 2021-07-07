@@ -17,8 +17,10 @@ After cloning the repository, `cd .vim` folder and run the following git command
 ## Dependencies
 
 * [FZF](https://github.com/junegunn/fzf): Used for fuzzy searches
-* [RipGrep](https://github.com/BurntSushi/ripgrep#installation): Used to grep file for FZF.  Create the following
-  environment variable `export FZF_DEFAULT_COMMAND=rg --files`
+* [RipGrep](https://github.com/BurntSushi/ripgrep#installation): Used to grep file for FZF.
+
+## Setup
+* Exclude .gitignore items in fuzzy search: Create the following environment variable `export FZF_DEFAULT_COMMAND=rg --files`
 
 ### Python3 Provider
 `pip3 install --user --upgrade neovim`
