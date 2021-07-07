@@ -17,9 +17,23 @@ call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('Yggdroot/indentLine')
+call minpac#add('mhinz/vim-grepper')
+call minpac#add('OmniSharp/omnisharp-vim')
+call minpac#add('leafgarland/typescript-vim')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('preservim/nerdtree')
+call minpac#add('vim-test/vim-test')
+
+"" Blog extensions
+call minpac#add('neoclide/coc.nvim')
+call minpac#add('jiangmiao/auto-pairs')
+call minpac#add('machakann/vim-sandwich')
+call minpac#add('preservim/nerdcommenter')
+call minpac#add('tpope/vim-fugitive') " git extension
+call minpac#add('airblade/vim-gitgutter') " git extension
 
 "" OmniSharp
-call minpac#add('OmniSharp/omnisharp-vim')
 filetype indent plugin on
 "let g:OmniSharp_popup_mappings.close = '<Esc>'
 
@@ -93,17 +107,9 @@ augroup omnisharp_commands
   autocmd FileType cs nmap <silent> <buffer> <Leader>ossp <Plug>(omnisharp_stop_server)
 augroup END
 
-"" Blog extensions
-call minpac#add('neoclide/coc.nvim')
-call minpac#add('jiangmiao/auto-pairs')
-call minpac#add('machakann/vim-sandwich')
-call minpac#add('preservim/nerdcommenter')
-call minpac#add('tpope/vim-fugitive') " git extension
-call minpac#add('airblade/vim-gitgutter') " git extension
 
 
 "" NerdTree
-call minpac#add('preservim/nerdtree')
 nnoremap <leader>n :NERDTreeFocus<CR>
 "nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -121,13 +127,10 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 autocmd BufWinEnter * silent NERDTreeMirror
 
 "" Vim Airline
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 
 "" Vim Test
-call minpac#add('vim-test/vim-test')
 "let g:test#javascript#jasmine#file_pattern = '\v^spec[\\/].*spec\.(js|jsx|coffee)$'
 "let test#javascript#jasmine#executable = 'npx jasmine'
 
@@ -146,7 +149,6 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
 "" Grepper
-call minpac#add('mhinz/vim-grepper')
 
 let g:grepper = {}
 let g:grepper.tools = ['grep', 'git', 'rg']
@@ -198,7 +200,6 @@ if has('nvim')
 endif
 
 "" Compiler Plugins
-call minpac#add('leafgarland/typescript-vim')
 let g:typescript_compiler_binary = 'npx tsc'
 
 " Mappings
