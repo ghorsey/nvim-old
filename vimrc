@@ -220,6 +220,7 @@ if has('nvim')
 endif
 
 " Options
+set guifont=Cascadia\ Mono\ PL
 set noswapfile
 set mouse=a " Enable Mouse Support
 set clipboard=unnamed " Copy to clipboard
