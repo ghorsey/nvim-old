@@ -17,6 +17,7 @@ call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('Yggdroot/indentLine')
+call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('OmniSharp/omnisharp-vim')
 call minpac#add('leafgarland/typescript-vim')
@@ -220,7 +221,7 @@ if has('nvim')
 endif
 
 " Options
-set guifont=Cascadia\ Mono\ PL
+" set guifont=FiraCode\ Nerd\ Font\ Mono:h11
 set noswapfile
 set mouse=a " Enable Mouse Support
 set clipboard=unnamed " Copy to clipboard
