@@ -22,6 +22,17 @@ After cloning the repository, `cd .vim` folder and run the following git command
 ## Setup
 * Exclude .gitignore items in fuzzy search: Create the following environment variable `export FZF_DEFAULT_COMMAND=rg --files`
 
+## Share vimrc with NeoVim
+* `init.vim` location:
+  * Mac/*nix: `~/.config/nvim/init.vim`
+  * Windows: `%LOCALAPPDATA%\nvim\init.vim`
+
+```
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
+```
+
 ### Python3 Provider
 `pip3 install --user --upgrade neovim`
 
