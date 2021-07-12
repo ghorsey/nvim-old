@@ -105,7 +105,12 @@ xmap gs <plug>(GrepperOperator)
 let g:ale_linters = {
 \  'cs': ['OmniSharp'],
 \  'javascript': ['eslint'],
+\  'scss': ['scsslint'],
+\  'typescript': ['tsserver']
 \}
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 
 """ Mappings in the style of unimpaired-next
