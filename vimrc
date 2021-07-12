@@ -25,14 +25,13 @@ call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('preservim/nerdtree')
 call minpac#add('vim-test/vim-test')
-
-"" Blog extensions
 call minpac#add('neoclide/coc.nvim')
 call minpac#add('jiangmiao/auto-pairs')
 call minpac#add('machakann/vim-sandwich')
 call minpac#add('preservim/nerdcommenter')
 call minpac#add('tpope/vim-fugitive') " git extension
 call minpac#add('airblade/vim-gitgutter') " git extension
+call minpac#add('w0rp/ale')
 
 "" OmniSharp
 source ./omnisharp.vim
@@ -93,7 +92,6 @@ nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
 "" Linting Plugins
-call minpac#add('w0rp/ale')
 let g:ale_linters = {
 \  'cs': ['OmniSharp'],
 \  'javascript': ['eslint'],
