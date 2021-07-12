@@ -34,11 +34,15 @@ call minpac#add('tpope/vim-fugitive') " git extension
 call minpac#add('airblade/vim-gitgutter') " git extension
 call minpac#add('w0rp/ale')
 
+function! ImportConfig(file)
+  exec printf('source %s', fnamemodify(expand('$MYVIMRC'), ':h') . expand('/') . a:file)
+endfunction
+
 "" OmniSharp
-source ./omnisharp.vim
+call ImportConfig('omnisharp.vim')
 
 "" Coc
-source ./coc.vim
+call ImportConfig('coc.vim')
 
 " resize current buffer by +/- 5
 nnoremap <C-left> :vertical resize -1<cr>
