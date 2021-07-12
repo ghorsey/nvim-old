@@ -40,6 +40,11 @@ source ./omnisharp.vim
 "" Coc
 source ./coc.vim
 
+" resize current buffer by +/- 5
+nnoremap <C-left> :vertical resize -1<cr>
+nnoremap <C-Down> :resize +1<cr>
+nnoremap <C-Up> :resize -1<cr>
+nnoremap <C-Right> :vertical resize +1<cr>
 
 "" NerdTree
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -52,8 +57,8 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+"autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+"    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Open the existing NERDTree on each new tab.
 autocmd BufWinEnter * silent NERDTreeMirror
@@ -97,6 +102,7 @@ let g:ale_linters = {
 \  'cs': ['OmniSharp'],
 \  'javascript': ['eslint'],
 \}
+
 
 """ Mappings in the style of unimpaired-next
 nmap <silent> [W <Plug>(ale_first)
