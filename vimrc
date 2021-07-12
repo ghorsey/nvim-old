@@ -1,4 +1,5 @@
 let mapleader = ',' " Sets the <Leader> key to a comma
+let g:ale_disable_lsp=1 " Disable ALE LISP server
 
 " Setup Package Manager
 packadd minpac
