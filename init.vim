@@ -1,5 +1,4 @@
 let mapleader = ',' " Sets the <Leader> key to a comma
-let g:ale_disable_lsp=1 " Disable ALE LISP server
 
 " Setup Package Manager
 packadd minpac
@@ -33,6 +32,8 @@ call minpac#add('preservim/nerdcommenter')
 call minpac#add('tpope/vim-fugitive') " git extension
 call minpac#add('airblade/vim-gitgutter') " git extension
 call minpac#add('w0rp/ale')
+" call minpac#add('joshdick/onedark.vim')
+call minpac#add('arcticicestudio/nord-vim')
 
 function! ImportConfig(file)
   exec printf('source %s', fnamemodify(expand('$MYVIMRC'), ':h') . expand('/') . a:file)
@@ -61,15 +62,15 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-"autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-"    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Open the existing NERDTree on each new tab.
 autocmd BufWinEnter * silent NERDTreeMirror
 
 "" Vim Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='molokai'
+let g:airline_theme='nord'
 
 "" Vim Test
 "let g:test#javascript#jasmine#file_pattern = '\v^spec[\\/].*spec\.(js|jsx|coffee)$'
@@ -111,7 +112,9 @@ let g:ale_linters = {
 
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-
+let g:ale_disable_lsp=1 " Disable ALE LISP server
+let g:ale_sign_column_always = 1 " Always show the ale gutter
+let g:airline#extensions#ale#enabled = 1
 
 """ Mappings in the style of unimpaired-next
 nmap <silent> [W <Plug>(ale_first)
@@ -175,7 +178,7 @@ set ignorecase " ignore case when searching
 set title
 set number
 syntax enable
-colorscheme Monokai-Refined " Set color scheme
+colorscheme nord " Set color scheme
 
 "" Undo file
 set undofile
@@ -188,6 +191,8 @@ augroup vimrc
   autocmd!
   autocmd BufWritePre /tmp/* setlocal noundofule " Do not create undo file for temp files
 augroup END
+
+silent! helptags ALL " Generate helptags
 
 " Commands
 command! PackUpdate call minpac#update()
