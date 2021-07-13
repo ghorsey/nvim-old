@@ -5,6 +5,7 @@ packadd minpac
 call minpac#init()
 
 " Plugins
+call minpac#add('puremourning/vimspector')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-projectionist')
@@ -70,10 +71,8 @@ nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
-""" Search the current word
-nnoremap <Leader>* :Grepper -cword -noprompt<CR>
-
-""" Search for the current selection nmap gs <plug>(GrepperOperator) xmap gs <plug>(GrepperOperator)
+" Vimspector settings
+let g:vimspector_enable_mappings = 'HUMAN'
 
 "" Linting Plugins
 let g:ale_linters = {
