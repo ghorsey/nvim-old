@@ -21,6 +21,8 @@ After cloning the repository, `cd .vim` folder and run the following git command
 
 ## Setup
 * Exclude .gitignore items in fuzzy search: Create the following environment variable `export FZF_DEFAULT_COMMAND=rg --files`
+* Install [MinGw](https://sourceforge.net/projects/mingw/) to install GCC
+* Install Make on windows `sudo cinst make`
 
 ## Share vimrc with NeoVim
 * `init.vim` location:
