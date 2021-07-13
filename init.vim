@@ -11,12 +11,12 @@ call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('radenling/vim-dispatch-neovim')
-"call minpac#add('nvim-telescope/telescope.nvim')
-"call minpac#add('nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' })
-"call minpac#add('nvim-lua/popup.nvim') " telescope dependency
+call minpac#add('nvim-telescope/telescope.nvim')
+call minpac#add('nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' })
+call minpac#add('nvim-lua/popup.nvim') " telescope dependency
 "call minpac#add('nvim-lua/plenary.nvim') " telescope dependency
-call minpac#add('junegunn/fzf', {'do': {-> fzf#install() }})
-call minpac#add('junegunn/fzf.vim')
+"call minpac#add('junegunn/fzf', {'do': {-> fzf#install() }})
+"call minpac#add('junegunn/fzf.vim')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('OmniSharp/omnisharp-vim')
@@ -33,6 +33,7 @@ call minpac#add('tpope/vim-fugitive') " git extension
 call minpac#add('airblade/vim-gitgutter') " git extension
 call minpac#add('w0rp/ale') " Adds stati syntax
 call minpac#add('arcticicestudio/nord-vim') " Colorscheme
+call minpac#add('rbgrouleff/bclose.vim') " Adds <leader>bd to close/delete a buffer
 
 function! ImportConfig(file)
   exec printf('source %s', fnamemodify(expand('$MYVIMRC'), ':h') . expand('/') . a:file)
@@ -46,6 +47,14 @@ call ImportConfig('coc.vim')
 
 "" NertTree
 call ImportConfig('nerdtree.vim')
+
+"" LUA configuarions
+lua require('gah.telescope')
+""" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " resize current buffer by +/- 5
 nnoremap <C-left> :vertical resize -1<CR>
