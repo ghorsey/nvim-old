@@ -14,7 +14,7 @@ call minpac#add('radenling/vim-dispatch-neovim')
 call minpac#add('nvim-telescope/telescope.nvim')
 call minpac#add('nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' })
 call minpac#add('nvim-lua/popup.nvim') " telescope dependency
-"call minpac#add('nvim-lua/plenary.nvim') " telescope dependency
+call minpac#add('nvim-lua/plenary.nvim') " telescope dependency
 "call minpac#add('junegunn/fzf', {'do': {-> fzf#install() }})
 "call minpac#add('junegunn/fzf.vim')
 call minpac#add('editorconfig/editorconfig-vim')
@@ -31,7 +31,7 @@ call minpac#add('machakann/vim-sandwich') " surround objects
 call minpac#add('preservim/nerdcommenter') " Commenter
 call minpac#add('tpope/vim-fugitive') " git extension
 call minpac#add('airblade/vim-gitgutter') " git extension
-call minpac#add('w0rp/ale') " Adds stati syntax
+call minpac#add('w0rp/ale') " Adds static syntax
 call minpac#add('arcticicestudio/nord-vim') " Colorscheme
 call minpac#add('rbgrouleff/bclose.vim') " Adds <leader>bd to close/delete a buffer
 
@@ -88,7 +88,8 @@ let g:ale_linters = {
 \  'cs': ['OmniSharp'],
 \  'javascript': ['eslint'],
 \  'scss': ['scsslint'],
-\  'typescript': ['tsserver']
+\  'typescript': ['tsserver'],
+\  'markdown': ['coc-markdownlint']
 \}
 
 let g:ale_set_loclist = 0

@@ -2,7 +2,8 @@
 let g:coc_global_extensions=[
 \ 'coc-omnisharp',
 \ 'coc-tsserver',
-\ 'coc-angular'
+\ 'coc-angular',
+\ 'coc-markdownlint'
 \ ]
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
