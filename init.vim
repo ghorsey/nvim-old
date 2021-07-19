@@ -1,3 +1,4 @@
+let g:ale_disable_lsp=1 " Disable ALE LISP server
 let mapleader = ',' " Sets the <Leader> key to a comma
 
 " Setup Package Manager
@@ -50,6 +51,7 @@ call ImportConfig('nerdtree.vim')
 
 "" LUA configuarions
 lua require('gah.telescope')
+
 """ Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -81,7 +83,15 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
 " Vimspector settings
-let g:vimspector_enable_mappings = 'HUMAN'
+"" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
+
+let g:vimspector_install_gadgets = ['netcoredbg']
 
 "" Linting Plugins
 let g:ale_linters = {
@@ -89,12 +99,11 @@ let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'scss': ['scsslint'],
 \  'typescript': ['tsserver'],
-\  'markdown': ['coc-markdownlint']
+\  'markdown': ['markdownlint', 'writegood']
 \}
 
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-let g:ale_disable_lsp=1 " Disable ALE LISP server
 let g:ale_sign_column_always = 1 " Always show the ale gutter
 let g:airline#extensions#ale#enabled = 1
 
