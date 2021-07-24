@@ -160,7 +160,8 @@ if has('nvim')
 endif
 
 " Options
- set guifont=FiraCode\ NF:h11
+set conceallevel=0 " Do not hide characters
+set guifont=FiraCode\ NF:h11
 set noswapfile
 set mouse=a " Enable Mouse Support
 set clipboard=unnamed " Copy to clipboard
