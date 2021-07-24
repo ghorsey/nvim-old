@@ -160,7 +160,10 @@ if has('nvim')
 endif
 
 " Options
-set conceallevel=0 " Do not hide characters
+
+autocmd FileType markdown let g:indentLine_enabled=0
+autocmd FileType markdown set conceallevel=0 " Do not hide characters
+
 set guifont=FiraCode\ NF:h11
 set noswapfile
 set mouse=a " Enable Mouse Support
