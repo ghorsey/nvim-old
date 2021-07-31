@@ -6,10 +6,11 @@ After cloning the repository, `cd .vim` folder and run the following git command
 `git submodule update --init --recursive`
 
 ## Windows Terminal
+
 1. Open Windows Terminal Settings
 1. Comment out the following lines:
 
-```
+```json
 // { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
 // { "command": "paste", "keys": "ctrl+v" },
 ```
@@ -20,25 +21,29 @@ After cloning the repository, `cd .vim` folder and run the following git command
 * [RipGrep](https://github.com/BurntSushi/ripgrep#installation): Used to grep file for FZF.
 
 ## Setup
+
 * Exclude .gitignore items in fuzzy search: Create the following environment variable `export FZF_DEFAULT_COMMAND=rg --files`
 * Install [MinGw](https://sourceforge.net/projects/mingw/) to install GCC
 * Install Make on windows `sudo cinst make`
 
 ## Share vimrc with NeoVim
+
 * `init.vim` location:
   * Mac/*nix: `~/.config/nvim/init.vim`
   * Windows: `%LOCALAPPDATA%\nvim\init.vim`
 
-```
+```bash
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 ```
 
 ### Python3 Provider
+
 `pip3 install --user --upgrade neovim`
 
 ### Neovim-Remote
+
 `pip3 install --user --upgrade neovim-remote`
 
 ## Per-Project Setup
@@ -48,7 +53,7 @@ source ~/.vimrc
 Projetionist adds commands to open files by type.  To use this extension you need to create a
 .projections.json file.  An example file looks like the following:
 
-```
+```json
 {
   "src/main.js": { "type": "main" },
   "src/data/models/*/model.js": { "type": "model" },
@@ -56,3 +61,10 @@ Projetionist adds commands to open files by type.  To use this extension you nee
   "src/data/models/*/serializer.js": { "type": "serializer" }
 }
 ```
+
+## Windows Tools
+
+You must install make and gcc in order to build the telescope fzf plugin.
+
+1. Install the [Scoop](https://scoop.sh/) command line installer
+1. Run `scoop install gcc grep make touch`
